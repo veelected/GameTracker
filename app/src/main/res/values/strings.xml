@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">XenobladeVer3</string>
+    <string name="title_activity_blades_page">BladesPage</string>
+    <string name="title_activity_shop_deeds_page">ShopDeedsPage</string>
+</resources>
