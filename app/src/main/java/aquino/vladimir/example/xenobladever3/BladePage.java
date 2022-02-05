@@ -1,6 +1,8 @@
 package aquino.vladimir.example.xenobladever3;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -127,7 +128,7 @@ public class BladePage extends AppCompatActivity {
     private boolean boxcheck99;
     private boolean boxcheck100;
 
-    private  int listLeft ;
+    private int listLeft;
     TextView tv_bladeListLeft;
 
 
@@ -146,9 +147,22 @@ public class BladePage extends AppCompatActivity {
         Collections.sort(arrayBladeList);
 
         adB.notifyDataSetChanged();
-load();
-        tv_bladeListLeft.setText("Remaining:"+listLeft);
+        load();
+        tv_bladeListLeft.setText("Remaining:" + listLeft);
 
+
+        lv_Blayout.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                BladeList test = new BladeList();
+                System.out.println("----------------------------------------------");
+                System.out.println(arrayBladeList.get(position));
+                onBrowseClick(arrayBladeList.get(position));
+                System.out.println("----------------------------------------------");
+
+                return false;
+            }
+        });
         lv_Blayout.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -160,7 +174,7 @@ load();
                 } else {
                     listLeft = listLeft + 1;
                 }
-                tv_bladeListLeft.setText("Remaining:"+listLeft);
+                tv_bladeListLeft.setText("Remaining:" + listLeft);
 
                 boxcheck0 = lv_Blayout.isItemChecked(0);
                 boxcheck1 = lv_Blayout.isItemChecked(1);
@@ -268,14 +282,27 @@ load();
             }
         });
 
+
         load();
         update();
+
     }
 
+    public void onBrowseClick(String v) {
+        String url = "https://www.google.com/search?q=" + v;
+        Uri uri = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        // Verify that the intent will resolve to an activity
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            // Here we use an intent without a Chooser unlike the next example
+            startActivity(intent);
+        }
+
+    }
 
     //save
     private void save() {
-        Log.d(TAG, "save: SAVED"+listLeft);
+        Log.d(TAG, "save: SAVED" + listLeft);
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
@@ -492,8 +519,7 @@ load();
         boolean box100 = sharedPreferences.getBoolean("name100", false);
 
 
-
-        listLeft    = sharedPreferences.getInt("listKEY", 42);
+        listLeft = sharedPreferences.getInt("listKEY", 42);
 
 
         boxcheck0 = box0;
@@ -599,12 +625,13 @@ load();
         boxcheck100 = box100;
 
 
-        Log.d(TAG, "load: LOADED"+listLeft+"KEYVALUE:");
+        Log.d(TAG, "load: LOADED" + listLeft + "KEYVALUE:");
     }
 
     //update
     private void update() {
-        if (listLeft!=42){        tv_bladeListLeft.setText("Remaining:" + listLeft);
+        if (listLeft != 42) {
+            tv_bladeListLeft.setText("Remaining:" + listLeft);
         }
 
         if (boxcheck0) lv_Blayout.setItemChecked(0, true);
@@ -708,7 +735,7 @@ load();
         if (boxcheck98) lv_Blayout.setItemChecked(98, true);
         if (boxcheck99) lv_Blayout.setItemChecked(99, true);
         if (boxcheck100) lv_Blayout.setItemChecked(100, true);
-        Log.d(TAG, "update: Update"+listLeft);
+        Log.d(TAG, "update: Update" + listLeft);
         return;
 
     }
