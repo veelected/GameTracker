@@ -8,6 +8,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/vlad1/AndroidStudioProjects/GameTracker/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/vlad1/Downloads/XenobladeVer3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.19270833333333334" />
         <entry key="..\:/Users/vlad1/Downloads/XenobladeVer3/app/src/main/res/layout/activity_blade_page.xml" value="0.1765625" />
         <entry key="..\:/Users/vlad1/Downloads/XenobladeVer3/app/src/main/res/layout/activity_expman_page.xml" value="0.1765625" />
@@ -15,7 +16,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

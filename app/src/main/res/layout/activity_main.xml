@@ -10,9 +10,9 @@
     tools:context=".MainActivity">
 
     <androidx.cardview.widget.CardView
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         app:cardBackgroundColor="#4A5CFF"
         app:cardCornerRadius="30dp">
 
@@ -20,7 +20,6 @@
             android:id="@+id/tv_mercmission"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="MercMissions"
             android:textAlignment="center"
@@ -30,6 +29,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -39,8 +39,7 @@
         <TextView
             android:id="@+id/tv_shopdeed"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:text="ShopDeed"
             android:textAlignment="center"
@@ -50,6 +49,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -60,7 +60,6 @@
             android:id="@+id/tv_monster"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="Monster"
             android:textAlignment="center"
@@ -70,6 +69,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -80,7 +80,6 @@
             android:id="@+id/tv_hiddenquest"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="HiddenQuest"
             android:textAlignment="center"
@@ -90,6 +89,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -100,7 +100,6 @@
             android:id="@+id/tv_secretarea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="SecretArea"
             android:textAlignment="center"
@@ -111,16 +110,17 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="#4A5CFF"
         app:cardCornerRadius="30dp">
+
         <TextView
             android:id="@+id/tv_blade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center_horizontal"
             android:text="Blade"
             android:textAlignment="center"
@@ -135,7 +135,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-
         app:cardBackgroundColor="#4A5CFF"
         app:cardCornerRadius="30dp">
 
@@ -148,7 +147,7 @@
             android:text="Exp-Man"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="60dp"
+            android:textSize="60sp"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
